@@ -1,0 +1,54 @@
+################################
+###     Pritle interview     ###
+###      Alfred Bourely      ###
+################################
+
+# Exercise 1
+from math import pi
+def get_area_of_circle(radius):
+    return pi*radius*radius
+# Done in 50 sec
+
+# Additional questions:
+# Do we need to consider the case where the radius is not a float/int ?
+
+# Exercise 2
+import os
+def find_postcode_lines_in_files_in_dir(path, postcodes=[]):
+    """
+    This function will return a list of tuples : (file_path, line)
+    if the line contains a postcode from the postcodes
+    """
+    save_lists = []
+    for current_file in os.listdir(path):
+        current_path = os.path.join(path, current_file)
+        if os.path.isdir(current_path):
+            save_lists = save_lists + find_postcode_lines_in_files_in_dir(current_path)
+        elif os.path.isfile(current_path):
+            f = open(current_path)
+            for line in f:
+                for postcode in postcodes:
+                    if postcode in line:
+                        save_lists.append( (current_path, line))
+            f.close()
+    return save_list
+# Done in 23 min
+
+# Additional questions:
+# 1. How should we consider postcodes ?
+# --> I belive the runtime can be optimized if we have more knowledge of what a postcode look like e.g. string of int of special size
+# 2. Do we want to reduce the search to only certain type e.g. .txt or .csv ?
+# --> I did a recursion algo to look at all files in all folders.
+# 3. What exactly do we want the function to return ?
+# --> I returned a tuple with the path and the line so we can easily look at the whole file for any reason
+
+# Exercise 3
+def sum_of_list(L):
+    c = 0
+    for i in L:
+        c += i
+    return c
+# Done in 30 sec
+
+# Additional questions:
+# How should we consider the case where the list elements are not numbers ? 
