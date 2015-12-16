@@ -1,7 +1,8 @@
-################################
-###     Pritle interview     ###
-###      Alfred Bourely      ###
-################################
+##################################################
+###     Pritle interview                       ###
+###      Alfred Bourely                        ###
+###      Arseniy Korobchenko (AK) answers      ###
+##################################################
 
 # Exercise 1
 from math import pi
@@ -11,6 +12,8 @@ def get_area_of_circle(radius):
 
 # Additional questions:
 # Do we need to consider the case where the radius is not a float/int ?
+
+# AK: I think we should, indeed. Moreover, it is really interesting where the radius comes from
 
 # Exercise 2
 import os
@@ -37,10 +40,18 @@ def find_postcode_lines_in_files_in_dir(path, postcodes=[]):
 # Additional questions:
 # 1. How should we consider postcodes ?
 # --> I belive the runtime can be optimized if we have more knowledge of what a postcode look like e.g. string of int of special size
+
+# AK: the regular Dutch postcode looks like XX 0000. How would that modify code?
+
 # 2. Do we want to reduce the search to only certain type e.g. .txt or .csv ?
 # --> I did a recursion algo to look at all files in all folders.
+
+# AK: I would suggest all files, which is nice.
+
 # 3. What exactly do we want the function to return ?
 # --> I returned a tuple with the path and the line so we can easily look at the whole file for any reason
+
+# AK: that totally serves the purpose. 
 
 # Exercise 3
 def sum_of_list(L):
@@ -52,3 +63,9 @@ def sum_of_list(L):
 
 # Additional questions:
 # How should we consider the case where the list elements are not numbers ? 
+
+# AK: It is very important - how would you validate for that?
+
+
+# AK: let’s split the files into executable py files if possible :)
+
